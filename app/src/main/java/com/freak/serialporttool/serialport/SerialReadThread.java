@@ -1,7 +1,6 @@
 package com.freak.serialporttool.serialport;
 
 import android.os.SystemClock;
-import android.util.Log;
 
 import com.freak.serialporttool.message.LogManager;
 import com.freak.serialporttool.message.ReceiveMessage;
@@ -72,7 +71,6 @@ public class SerialReadThread extends Thread {
         String hexStr = ByteUtil.bytes2HexStr(received, 0, size);
         LogManager.instance().post(new ReceiveMessage(hexStr));
         LogUtil.e("扫码结果--》"+ hexStr);
-//        LogManager.instance().post(new ReceiveMessage(ByteUtil.hexStr2decimal(hexStr)+""));
     }
 
     /**
